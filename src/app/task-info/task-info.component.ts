@@ -3,7 +3,7 @@ import { Task } from '../task.model';
 
 @Component({
   selector: 'app-task-info',
-  template: `./task-info.component.html`,
+  templateUrl: `./task-info.component.html`,
   standalone: true,
 })
 export class TaskInfoComponent {

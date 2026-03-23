@@ -6,7 +6,7 @@ import { Task } from '../task.model';
 
 @Component({
   selector: 'app-task-add',
-  template: `./task-add.component.html`,
+  templateUrl: `./task-add.component.html`,
   standalone: true,
 })
 export class TaskAddComponent {

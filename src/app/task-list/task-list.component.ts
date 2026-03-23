@@ -1,16 +1,16 @@
-// task-list.component.ts
 import { Component, inject } from '@angular/core';
 import { TaskService } from '../task.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Task } from '../task.model';
 
 @Component({
   selector: 'app-task-list',
-  imports:[Router],
-  template: './task-list.component.html',
+  imports:[RouterModule],
+  templateUrl: './task-list.component.html',
   standalone: true,
 })
 export class TaskListComponent {
+  router = inject(Router);
   taskService = inject(TaskService);
   tasks: Task[] = [];
 
