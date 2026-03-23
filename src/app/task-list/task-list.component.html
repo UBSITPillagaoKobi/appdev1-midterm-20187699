@@ -1,26 +1,10 @@
-<div class="container mt-4">
-  <h2>Task List</h2>
-  <button class="btn btn-primary mb-3" routerLink="/add">Add New Task</button>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Status</th>
-        <th>Priority</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of tasks">
-        <td>{{ task.title }}</td>
-        <td>{{ task.status }}</td>
-        <td>{{ task.priority }}</td>
-        <td>
-          <a [routerLink]="['/task', task.id]" class="btn btn-info btn-sm">View</a>
-          <a [routerLink]="['/edit', task.id]" class="btn btn-warning btn-sm">Edit</a>
-          <button (click)="deleteTask(task.id)" class="btn btn-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+ <h3>Task List</h3>
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between">
+        <span>{{ task.title }}</span>
+        <span class="badge bg-{{ task.priority.toLowerCase() }}">{{ task.priority }}</span>
+        <button class="btn btn-info" [routerLink]="['/tasks', task.id]">Details</button>
+        <button class="btn btn-warning" [routerLink]="['/tasks/edit', task.id]">Edit</button>
+        <button class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
